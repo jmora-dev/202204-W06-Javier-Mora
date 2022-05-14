@@ -1,6 +1,6 @@
 import { cellSamePositionAsCell } from './cellSamePositionAsCell.js';
 
-describe('Given function evaluateCellStatus', () => {
+describe('Given function cellSamePositionAsCell', () => {
   describe('When receive {x:1,y:2}, {x:1,y:2,foo:false}', () => {
     test('Then should be true', () => {
       const values = [
