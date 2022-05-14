@@ -1,0 +1,43 @@
+{
+  "name": "ch06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --coverage",
+    "test-watch": "jest --coverage --watchAll",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "@types/jest": "^27.5.1",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "endOfLine": "lf"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "jsconfig": {
+    "typeAcquisition": {
+      "include": [
+        "jest"
+      ]
+    }
+  }
+}
