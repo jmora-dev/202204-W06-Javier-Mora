@@ -57,7 +57,6 @@ export class Board {
     const cellsAlive = this.getCellsAlive(cellsCopy);
     cellsAlive.forEach((cell) => {
       const adjacentPositions = this.getAdjacentPositionsToCell(cell);
-      console.log(cell, adjacentPositions);
       adjacentPositions.forEach((position) => {
         this.getCellByPosition(...position).adjacent++;
       });
