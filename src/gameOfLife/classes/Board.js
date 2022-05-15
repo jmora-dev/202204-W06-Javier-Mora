@@ -1,4 +1,4 @@
-import { calculateAdjacentPositionsSpherical } from '../utils/calculateAdjacentPositionsSpherical';
+import { calculateAdjacentPositionsSpherical } from '../utils/calculateAdjacentPositionsSpherical.js';
 import { cellSamePositionAsCords } from '../utils/cellSamePositionAsCords.js';
 import { evaluateCellStatus } from '../utils/evaluateCellStatus.js';
 import { Cell } from './Cell.js';
@@ -13,8 +13,8 @@ export class Board {
 
   createBoardCells(height, width) {
     const cells = [];
-    for (let x = 0; x < width; x++) {
-      for (let y = 0; y < height; y++) {
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
         cells.push(new Cell(x, y, false));
       }
     }
@@ -25,6 +25,13 @@ export class Board {
     const cell = this.cells.find((cell) => cellSamePositionAsCords(cell, x, y));
     if (cell) {
       cell.isAlive = isAlive;
+    }
+  }
+
+  toggleCellAlive(x, y) {
+    const cell = this.cells.find((cell) => cellSamePositionAsCords(cell, x, y));
+    if (cell) {
+      cell.isAlive = !cell.isAlive;
     }
   }
 
