@@ -43,10 +43,6 @@ export class Board {
     return this.cells.find((cell) => cellSamePositionAsCords(cell, x, y));
   }
 
-  getCellsByPositions(positions) {
-    return positions.map((position) => this.getCellByPosition(...position));
-  }
-
   getAdjacentPositionsToCell(cell) {
     return calculateAdjacentPositionsSpherical(
       cell.x,
