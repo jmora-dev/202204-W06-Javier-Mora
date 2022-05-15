@@ -7,13 +7,14 @@
     <script src="./src/index.js" type="module"></script>
     <title>Game of Life</title>
   </head>
-  <link rel="stylesheet" href="./src/styles/base.css" />
-  <link rel="stylesheet" href="./src/styles/gameOfLife/gameOfLife.css" />
+  <link rel="stylesheet" href="./src/styles/initial.css" />
+  <link rel="stylesheet" href="./src/styles/gameOfLife.css" />
+  <link rel="stylesheet" href="./src/styles/button.css" />
   <body>
-    <header>
-      <button onclick="onStart()">Start</button
-      ><button onclick="onStop()">Stop</button>
+    <header class="header">
+      <button onclick="onStart()" class="button">Start</button
+      ><button onclick="onStop()" class="button">Stop</button>
     </header>
-    <div id="app"></div>
+    <main id="game-board" class="main"></main>
   </body>
 </html>

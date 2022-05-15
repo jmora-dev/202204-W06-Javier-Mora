@@ -1,0 +1,24 @@
+.board {
+  display: grid;
+  gap: 3px;
+}
+
+.cell {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+.cell--is-alive {
+  background-color: #444;
+}
+.cell--is-alive:hover {
+  background-color: #666;
+}
+.cell--is-dead {
+  background-color: #eee;
+}
+.cell--is-dead:hover {
+  background-color: #ddd;
+}
+
+/*# sourceMappingURL=gameOfLife.css.map */
