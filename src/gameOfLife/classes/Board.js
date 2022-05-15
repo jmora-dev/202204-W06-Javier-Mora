@@ -18,6 +18,14 @@ export class Board {
         cells.push(new Cell(x, y, false));
       }
     }
+    return cells;
+  }
+
+  setCellAlive(x, y, isAlive) {
+    const cell = this.cells.find((cell) => cellSamePositionAsCords(cell, x, y));
+    if (cell) {
+      cell.isAlive = isAlive;
+    }
   }
 
   getCellsAlive(cells) {
