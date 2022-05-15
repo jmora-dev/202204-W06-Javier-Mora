@@ -49,4 +49,12 @@ describe('Given function evaluateCellStatus', () => {
       expect(result).toBe(expectedResult);
     });
   });
+  describe('When receive false, 4', () => {
+    test('Then should be false', () => {
+      const values = [false, 4];
+      const expectedResult = false;
+      const result = evaluateCellStatus(...values);
+      expect(result).toBe(expectedResult);
+    });
+  });
 });
