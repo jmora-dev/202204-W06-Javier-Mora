@@ -40,7 +40,7 @@ export class Board {
   }
 
   getCellByPosition(x, y) {
-    this.cells.find((cell) => cellSamePositionAsCords(cell, x, y));
+    return this.cells.find((cell) => cellSamePositionAsCords(cell, x, y));
   }
 
   getCellsByPositions(positions) {
@@ -61,8 +61,9 @@ export class Board {
     const cellsAlive = this.getCellsAlive(cellsCopy);
     cellsAlive.forEach((cell) => {
       const adjacentPositions = this.getAdjacentPositionsToCell(cell);
+      console.log(cell, adjacentPositions);
       adjacentPositions.forEach((position) => {
-        this.getCellsByPosition(...position).adjacent++;
+        this.getCellByPosition(...position).adjacent++;
       });
     });
     return cellsCopy;

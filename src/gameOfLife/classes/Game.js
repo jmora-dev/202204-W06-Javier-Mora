@@ -6,6 +6,7 @@ export class Game {
     this.idHtmlElement = idHtmlElement;
     this.board = new Board(height, width);
     this.onClickFunctionName = onClickFunctionName;
+    this.interval = null;
     this.render();
   }
 
@@ -20,5 +21,22 @@ export class Game {
     }
     this.board.toggleCellAlive(+x, +y);
     this.render();
+  }
+
+  start() {
+    if (this.interval) {
+      this.stop();
+    }
+    this.interval = setInterval(() => {
+      this.board.nextLoop();
+      this.render();
+    }, 1000);
+  }
+
+  stop() {
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   }
 }
