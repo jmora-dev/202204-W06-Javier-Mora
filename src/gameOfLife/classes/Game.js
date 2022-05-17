@@ -2,9 +2,10 @@ import { renderBoard } from '../render/renderBoard.js';
 import { Board } from './Board.js';
 
 export class Game {
-  constructor(height, width, idHtmlElement, onClickFunctionName) {
+  constructor(height, width, intervalTime, idHtmlElement, onClickFunctionName) {
     this.idHtmlElement = idHtmlElement;
     this.board = new Board(height, width);
+    this.intervalTime = intervalTime;
     this.onClickFunctionName = onClickFunctionName;
     this.interval = null;
     this.render();
@@ -30,7 +31,7 @@ export class Game {
     this.interval = setInterval(() => {
       this.board.nextLoop();
       this.render();
-    }, 1000);
+    }, this.intervalTime);
   }
 
   stop() {

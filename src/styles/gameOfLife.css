@@ -1,6 +1,5 @@
 .board {
   display: grid;
-  gap: 3px;
 }
 
 .cell {
