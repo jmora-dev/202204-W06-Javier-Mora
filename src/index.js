@@ -13,3 +13,11 @@ window.onStart = () => {
 window.onStop = () => {
   game.stop();
 };
+
+window.onRandom = () => {
+  game.random();
+};
+
+window.onClear = () => {
+  game.clear();
+};

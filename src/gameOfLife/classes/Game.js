@@ -40,4 +40,14 @@ export class Game {
       this.interval = null;
     }
   }
+
+  random() {
+    this.board.setRandomAliveCells();
+    this.render();
+  }
+
+  clear() {
+    this.board.clearAliveCells();
+    this.render();
+  }
 }

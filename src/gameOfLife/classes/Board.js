@@ -83,4 +83,16 @@ export class Board {
     this.cells = this.updateCellStatusByAdjacentValue(this.cells);
     this.cells = this.resetAdjacentCellsValue(this.cells);
   }
+
+  setRandomAliveCells() {
+    this.cells.forEach((cell) => {
+      cell.isAlive = Math.floor(Math.random() * 2) === 0 ? false : true;
+    });
+  }
+
+  clearAliveCells() {
+    this.cells.forEach((cell) => {
+      cell.isAlive = false;
+    });
+  }
 }
