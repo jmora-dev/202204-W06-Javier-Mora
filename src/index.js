@@ -1,6 +1,6 @@
 import { Game } from './gameOfLife/classes/Game.js';
 
-const game = new Game(40, 100, 400, 'game-board', 'onClickCell');
+const game = new Game(35, 80, 500, 'game-board', 'onClickCell');
 
 window.onClickCell = (x, y) => {
   game.onClickCell(+x, +y);
